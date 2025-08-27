@@ -29,7 +29,7 @@ export function RepoListItem({ repo }: RepoListItemProps) {
 
   const getLanguageColor = (language: string) => 
     languageColors[language] || 'bg-gray-400';
-
+  // format date to relative time
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     const now = new Date();

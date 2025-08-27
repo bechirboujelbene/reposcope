@@ -43,9 +43,12 @@ const mockUserData = {
   rateLimit: { remaining: 4999, resetAt: '2023-12-31T23:59:59Z' },
 };
 
+// Point MSW to the actual GitHub GraphQL endpoint used by the app
+const github = graphql.link('https://api.github.com/graphql');
+
 export const handlers = [
   // Mock successful user repositories query
-  graphql.query('UserRepositories', ({ variables }) => {
+  github.query('UserRepositories', ({ variables }) => {
     const { login } = variables as { login: string };
     
     if (login === 'octocat') {

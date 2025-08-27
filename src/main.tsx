@@ -3,14 +3,11 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { ApolloProvider } from './app/providers/ApolloProvider';
-import { ThemeProvider } from './app/providers/ThemeProvider';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ApolloProvider>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
+      <App />
     </ApolloProvider>
   </StrictMode>,
 );

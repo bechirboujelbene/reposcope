@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# GitHub Repository Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for exploring GitHub repositories by username. Built with TypeScript, Vite, Apollo Client, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Search GitHub users** by username with debounced input
+- **Browse repositories** with pagination and filtering
+- **Filter by language** and repository name
+- **Error handling** for API limits and invalid users
+- **Loading states** and empty state management
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** with TypeScript
+- **Vite** for fast development and building
+- **Apollo Client** for GraphQL API integration
+- **Tailwind CSS** for styling
+- **Lucide React** for icons
+- **Vitest** for testing
+- **Storybook** for component development
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+
+
+1. Install dependencies:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Add GitHub token for dealing with API limits:
+```bash
+cp .env.example .env.local
+# Edit .env.local and add your GitHub token
 ```
+
+### Running the Application
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+
+```
+
+The app will be available at `http://localhost:5173`
+
+## Development Tools
+
+
+### Testing
+```bash
+# Run tests once
+npm test
+
+# Watch mode
+npm run test:watch
+
+# UI mode
+npm run test:ui
+```
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Filters/        # Repository filtering controls
+│   ├── RepoList/       # Repository list and items
+│   ├── SearchBar/      # Username search input
+│   └── UserHeader/     # User profile display
+├── features/           # Feature-specific code
+│   └── github/         # GitHub API integration
+├── hooks/              # Custom React hooks
+├── pages/              # Page components
+└── tests/              # Test setup and mocks
+```
+
+## Future Improvements or Features
+
+- **Authentication**: Full GitHub OAuth integration for private repos
+- **Advanced Filtering**: Date ranges, repository size, topics
+- **Repository Details**: Individual repository pages with README, issues, PRs
+- **User Profiles**: Complete user information, followers, following
+- **Favorites**: Save and organize favorite repositories
+- **Dark Mode**: Theme switching capability
+- **Offline Support**: PWA with service worker
+- **Performance**: Virtual scrolling for large repository lists
+- **Analytics**: Usage tracking and insights
+- **Export**: Export repository lists to various formats

@@ -11,9 +11,7 @@ export const USER_REPOSITORIES_QUERY = gql`
         first: $first
         after: $after
         orderBy: { field: UPDATED_AT, direction: DESC }
-        isFork: false
-        isArchived: false
-      ) {
+       ) {
         totalCount
         pageInfo {
           hasNextPage

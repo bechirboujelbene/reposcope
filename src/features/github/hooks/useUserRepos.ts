@@ -28,9 +28,7 @@ export interface UserRepositoriesVars {
 }
 
 /**
- * Custom hook to fetch GitHub user repositories using GraphQL with pagination support
- * @param params - Parameters including login and pagination options
- * @returns Apollo query result with typed data and fetchMore function
+ * Custom hook to fetch GitHub user repositories using GraphQL with pagination support (load 30 repositories per call)
  */
 export function useUserRepos({ login, first = 30 }: UseUserReposParams) {
   const skip = !login.trim();

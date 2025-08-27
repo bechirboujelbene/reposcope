@@ -19,7 +19,7 @@ export function UserHeader({ user, repositoryCount }: UserHeaderProps) {
       <div className="flex-1">
         <h2 className="text-xl font-semibold text-gray-900">{user.login}</h2>
         <p className="text-gray-600">
-          {repositoryCount} public {repositoryCount === 1 ? 'repository' : 'repositories'}
+          {repositoryCount} {repositoryCount === 1 ? 'repository' : 'repositories'}
         </p>
         <a
           href={user.url}

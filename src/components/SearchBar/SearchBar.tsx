@@ -9,7 +9,7 @@ interface SearchBarProps {
 }
 
 /**
- * GitHub-style search input for entering usernames
+ * search input component for entering usernames
  */
 export function SearchBar({ 
   value, 
@@ -42,6 +42,7 @@ export function SearchBar({
           className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
         />
       </div>
+      {/* Search repositories button */}
       {onSearch && (
         <button
           onClick={onSearch}

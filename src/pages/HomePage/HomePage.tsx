@@ -9,7 +9,6 @@ import { useDebounce } from '../../hooks/useDebounce';
 
 /**
  * Main page for exploring GitHub repositories
- * Features debounced search, filtering, and GitHub-like UI
  */
 export default function HomePage() {
   const [username, setUsername] = useState('');
@@ -17,7 +16,7 @@ export default function HomePage() {
   const [nameQuery, setNameQuery] = useState('');
   const [language, setLanguage] = useState('All');
 
-  // Debounce search to avoid excessive API calls
+  // Debounce search (timer = 500 ms) to avoid excessive API calls when typing username
   const debouncedUsername = useDebounce(searchTerm, 500);
 
   const { data, loading, error, loadMore, hasNextPage, isLoadingMore } = useUserRepos({ login: debouncedUsername });
@@ -35,7 +34,7 @@ export default function HomePage() {
   const hasSearched = !!debouncedUsername;
   const hasResults = user && repos.length > 0;
 
-  // Enhanced error handling
+  // error handling
   const getErrorMessage = (error: any) => {
     if (error?.message?.includes('403')) {
       return 'API rate limit exceeded. Please add a GitHub token to continue.';
