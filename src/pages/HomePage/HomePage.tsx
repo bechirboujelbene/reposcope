@@ -179,17 +179,15 @@ export default function HomePage() {
                   <div className="mx-auto w-16 h-16 text-gray-400 mb-4">
                     <BookOpen className="w-16 h-16" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No public repositories</h3>
-                  <p className="text-gray-600">This user doesn't have any public repositories.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No repositories found</h3>
+                  <p className="text-gray-600">This user doesn't have any repositories.</p>
                 </div>
               )}
               
               {/* No User Found */}
               {!loading && !error && hasSearched && !user && (
                 <div className="bg-white border border-gray-200 rounded-lg p-5 text-center">
-                  <div className="w-8 h-8 mx-auto text-gray-400 mb-2">
-                    <Search className="w-8 h-8" />
-                  </div>
+                  
                   <h3 className="text-sm font-medium text-gray-900 mb-1">User not found</h3>
                   <p className="text-gray-500 text-sm">
                     No user found with username "{debouncedUsername}". Please check the spelling and try again.

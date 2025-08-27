@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { ApolloProvider as Provider } from '@apollo/client/react';
 
-// Reads token from Vite env or localStorage for convenience
+// Reads token from Vite env 
 const token = import.meta.env.VITE_GITHUB_TOKEN 
 
 const client = new ApolloClient({

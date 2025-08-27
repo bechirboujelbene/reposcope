@@ -36,7 +36,7 @@ A React application for exploring GitHub repositories by username. Built with Ty
 npm install
 ```
 
-3. Add GitHub token for dealing with API limits:
+2. Add GitHub token for dealing with API limits:
 ```bash
 cp .env.example .env.local
 # Edit .env.local and add your GitHub token
@@ -64,11 +64,7 @@ The app will be available at `http://localhost:5173`
 # Run tests once
 npm test
 
-# Watch mode
-npm run test:watch
 
-# UI mode
-npm run test:ui
 ```
 
 ## Project Structure
@@ -92,10 +88,6 @@ src/
 - **Authentication**: Full GitHub OAuth integration for private repos
 - **Advanced Filtering**: Date ranges, repository size, topics
 - **Repository Details**: Individual repository pages with README, issues, PRs
-- **User Profiles**: Complete user information, followers, following
 - **Favorites**: Save and organize favorite repositories
 - **Dark Mode**: Theme switching capability
-- **Offline Support**: PWA with service worker
-- **Performance**: Virtual scrolling for large repository lists
-- **Analytics**: Usage tracking and insights
 - **Export**: Export repository lists to various formats
