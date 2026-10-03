@@ -1,6 +1,6 @@
-# GitHub Repository Explorer
+# RepoScope
 
-A React application for exploring GitHub repositories by username. Built with TypeScript, Vite, Apollo Client, and Tailwind CSS.
+Get a quick overview of anyone's open-source work: search a GitHub user, then browse and filter their repositories by language and name. Built with React, TypeScript, Apollo Client (GitHub GraphQL API) and Tailwind CSS, with component tests in Vitest.
 
 ## Features
 
@@ -18,7 +18,6 @@ A React application for exploring GitHub repositories by username. Built with Ty
 - **Tailwind CSS** for styling
 - **Lucide React** for icons
 - **Vitest** for testing
-- **Storybook** for component development
 
 ## Getting Started
 
