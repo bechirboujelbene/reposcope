@@ -44,38 +44,38 @@ export function RepoListItem({ repo }: RepoListItemProps) {
   };
 
   return (
-    <div className="border-b border-gray-200 py-6 px-4 hover:bg-gray-50 transition-colors duration-150">
+    <div className="border-b border-gray-200 dark:border-gray-800 py-6 px-4 hover:bg-gray-50 dark:hover:bg-gray-800/60 transition-colors duration-150">
       <div className="flex items-start justify-between">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3">
             {/* Repository icon */}
-            <BookOpen className="w-4 h-4 text-gray-600 flex-shrink-0" />
+            <BookOpen className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
             <a 
               href={repo.url} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-blue-600 hover:text-blue-800 font-semibold text-lg hover:underline transition-colors duration-150"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold text-lg hover:underline transition-colors duration-150"
             >
               {repo.name}
             </a>
           </div>
           
           {repo.description && (
-            <p className="text-gray-700 mt-3 text-sm leading-relaxed ml-7">{repo.description}</p>
+            <p className="text-gray-700 dark:text-gray-300 mt-3 text-sm leading-relaxed ml-7">{repo.description}</p>
           )}
           
           <div className="flex items-center gap-6 mt-4 ml-7">
             {repo.primaryLanguage?.name && (
               <div className="inline-flex items-center gap-2">
                 <span className={`h-3 w-3 rounded-full ${getLanguageColor(repo.primaryLanguage.name)}`} />
-                <span className="text-sm text-gray-700">{repo.primaryLanguage.name}</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">{repo.primaryLanguage.name}</span>
               </div>
             )}
             <div className="inline-flex items-center gap-1.5">
-              <Star className="w-4 h-4 text-gray-500" />
-              <span className="text-sm text-gray-700">{repo.stargazerCount}</span>
+              <Star className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+              <span className="text-sm text-gray-700 dark:text-gray-300">{repo.stargazerCount}</span>
             </div>
-            <span className="text-sm text-gray-500">Updated {formatDate(repo.updatedAt)}</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">Updated {formatDate(repo.updatedAt)}</span>
           </div>
         </div>
       </div>

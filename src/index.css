@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Follow the system light or dark setting, including native controls like the select menu */
+:root {
+  color-scheme: light dark;
+}
+
 /* Reset default styles to let Tailwind take full control */
 
 
