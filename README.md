@@ -35,7 +35,7 @@ Get a quick overview of anyone's open-source work: search a GitHub user, then br
 npm install
 ```
 
-2. Add GitHub token for dealing with API limits:
+2. Add a GitHub token (the GraphQL API requires one):
 ```bash
 cp .env.example .env.local
 # Edit .env.local and add your GitHub token
@@ -54,6 +54,10 @@ npm run build
 ```
 
 The app will be available at `http://localhost:5173`
+
+## Deployment
+
+On Vercel the app calls `/api/github` (`api/github.ts`), a small function that forwards the repository query to GitHub with a token kept on the server. It only accepts that one read-only query. Set `GITHUB_TOKEN` in the project's environment variables; a fine-grained token with no extra permissions is enough for public data.
 
 ## Development Tools
 

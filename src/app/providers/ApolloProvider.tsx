@@ -1,14 +1,16 @@
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { ApolloProvider as Provider } from '@apollo/client/react';
 
-// Reads token from Vite env 
-const token = import.meta.env.VITE_GITHUB_TOKEN 
+// Locally a personal token from .env.local calls GitHub directly.
+// Without one, requests go through the /api/github function, which holds the token on the server.
+const token = import.meta.env.VITE_GITHUB_TOKEN
 
 const client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'https://api.github.com/graphql',
-    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-  }),
+  link: new HttpLink(
+    token
+      ? { uri: 'https://api.github.com/graphql', headers: { Authorization: `Bearer ${token}` } }
+      : { uri: '/api/github' }
+  ),
   cache: new InMemoryCache(),
 });
 
