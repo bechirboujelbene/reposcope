@@ -52,7 +52,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-5xl px-4">
           <div className="flex items-center h-14">
             <Github className="w-6 h-6 text-gray-900 mr-2" />
-            <h1 className="text-lg font-semibold text-gray-900">Repository Explorer</h1>
+            <h1 className="text-lg font-semibold text-gray-900">RepoScope</h1>
           </div>
         </div>
       </header>
@@ -62,7 +62,7 @@ export default function HomePage() {
         {/* Search Section */}
         <section className="py-8 text-center">
           <div className="max-w-lg mx-auto">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">GitHub Repository Explorer</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">Explore anyone's GitHub repositories</h1>
             <p className="text-sm text-gray-600 mb-5">Enter a GitHub username to explore their repositories</p>
             
             <div className="space-y-3">
