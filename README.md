@@ -9,6 +9,7 @@ Get a quick overview of anyone's open-source work: search a GitHub user, then br
 - **Filter by language** and repository name
 - **Error handling** for API limits and invalid users
 - **Loading states** and empty state management
+- **Light and dark theme**: follows the system setting, with a button to switch and remember the choice
 
 ## Tech Stack
 
@@ -85,12 +86,3 @@ src/
 ├── pages/              # Page components
 └── tests/              # Test setup and mocks
 ```
-
-## Future Improvements or Features
-
-- **Authentication**: Full GitHub OAuth integration for private repos
-- **Advanced Filtering**: Date ranges, repository size, topics
-- **Repository Details**: Individual repository pages with README, issues, PRs
-- **Favorites**: Save and organize favorite repositories
-- **Dark Mode**: Theme switching capability
-- **Export**: Export repository lists to various formats
