@@ -22,7 +22,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
       title={dark ? 'Light theme' : 'Dark theme'}
-      className="ml-auto p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+      className="ml-auto p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition-colors"
     >
       {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
     </button>
