@@ -3,6 +3,7 @@ import { Github, Search, BookOpen } from 'lucide-react';
 import { Filters } from '../../components/Filters/Filters';
 import { RepoList } from '../../components/RepoList/RepoList';
 import { UserHeader } from '../../components/UserHeader/UserHeader';
+import { ThemeToggle } from '../../components/ThemeToggle/ThemeToggle';
 import { useUserRepos } from '../../features/github/hooks/useUserRepos';
 import { deriveLanguages, filterRepos } from '../../features/github/utils/filter';
 import { useDebounce } from '../../hooks/useDebounce';
@@ -53,6 +54,7 @@ export default function HomePage() {
           <div className="flex items-center h-14">
             <Github className="w-6 h-6 text-gray-900 dark:text-gray-100 mr-2" />
             <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-100">RepoScope</h1>
+            <ThemeToggle />
           </div>
         </div>
       </header>

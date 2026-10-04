@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
-/* Follow the system light or dark setting, including native controls like the select menu */
+/* Dark mode is driven by a "dark" class on <html> (set in index.html and by the theme toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Native controls like the select menu follow the chosen theme */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+}
+:root.dark {
+  color-scheme: dark;
 }
 
 /* Reset default styles to let Tailwind take full control */
